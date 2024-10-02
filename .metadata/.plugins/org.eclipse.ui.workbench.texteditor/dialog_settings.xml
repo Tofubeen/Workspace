@@ -20,8 +20,6 @@
 			<item value="board"/>
 			<item value="boardCount"/>
 			<item value="autowiring sql"/>
-			<item value="autowired"/>
-			<item value="doget"/>
 		</list>
 		<list key="replacehistory">
 		</list>

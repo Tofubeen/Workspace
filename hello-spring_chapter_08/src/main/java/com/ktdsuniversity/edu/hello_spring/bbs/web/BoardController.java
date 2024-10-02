@@ -1,6 +1,17 @@
 package com.ktdsuniversity.edu.hello_spring.bbs.web;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +22,7 @@ import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardListVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
+import com.ktdsuniversity.edu.hello_spring.common.beans.FileHandler;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +36,8 @@ public class BoardController {
 	//BoardServiceImpl에 구현된 인스턴스를 boardService에 주입( 스프링 이 생성시켜준다 )
 	//BoardService은 인터페이스기에 BoardServiceImpl 에 생성되있는 인스턴스를 가져온다
 	
+	@Autowired
+	private FileHandler fileHandler;
 	
 	
 	@Autowired
@@ -122,18 +136,18 @@ public class BoardController {
 	}
 	
 	
+	@GetMapping("/board/file/download/{id}")
+	public ResponseEntity<Resource> doDownload(@PathVariable int id) {
+		
+		//1. 다운로드 할 파일의 이름을 알기 위해 게시글을 조회한다
+		BoardVO boardVO = this.boardService.getDetailBoard(id, false);
+		
+		return this.fileHandler.downloadFile(boardVO.getFileName(), boardVO.getOriginFileName());
+	}
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ktdsuniversity.edu.hello_spring.bbs.dao.ToDoBoardDao">
+
+	<select id="selectToDoBoard" resultType="com.ktdsuniversity.edu.hello_spring.bbs.vo.ToDoBoardVO">
+	SELECT 
+		ID
+		,STATUS
+		,SUBJECT
+		,END_DT
+	FROM 
+		TODOBOARD
+	</select>
+
+	<update id="updateBoard" parameterType="_int">
+	UPDATE 
+	       TODOBOARD 
+	   SET 
+	       STATUS = 'DONE'
+	WHERE 
+		   ID = #{id}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="_int">
+	DELETE 
+	FROM 
+		TODOBOARD 
+	WHERE 
+		id = #{id}
+	</delete>
+	
+	<insert id="createBoard" parameterType="com.ktdsuniversity.edu.hello_spring.bbs.vo.ToDoWriteBoardVO">
+	INSERT INTO TODOBOARD
+		(ID
+		,SUBJECT
+		,END_DT
+		,STATUS)
+		 
+	VALUES
+		(SEQ_TODOBOARD_PK.NEXTVAL
+		,#{subject}
+		,#{endDt}
+		,NULL)
+	</insert>
+
+
+
+</mapper>
