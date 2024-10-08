@@ -26,8 +26,8 @@ public class MemberDaoImpl extends SqlSessionDaoSupport implements MemberDao{
 
 	@Override
 	public int selectEmailCount(String email) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return this.getSqlSession().selectOne("com.ktdsuniversity.edu.hello_spring.member.dao.MemberDao.selectEmailCount" , email);
 	}
 
 	@Override

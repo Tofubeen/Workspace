@@ -1,11 +1,13 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1693315978000
+codetogether.announce.displayed=true
 configurationInstallLocation=/C\:/Devs/spring-tool-suite-4-4.25.0.RELEASE-e4.33.0-win32.win32.x86_64/sts-4.25.0.RELEASE/
+ct.reengagement.display.after=1738800555393
 ct.upsell.display.after=1727842566887
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1727742353614
-lastConfiguration=1727827338216
+last.download.attempt.time=1728345406629
+lastConfiguration=1728344943277
 newinstall=false
 showWelcomeDialog=false
 workbench.theme=Dark Gray

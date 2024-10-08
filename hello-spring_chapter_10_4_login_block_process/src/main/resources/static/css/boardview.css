@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+  color: #333;
+  text-decoration: none;
+}
+
+div.grid {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 28px 28px 28px 28px 28px 320px 1fr;
+  row-gap: 10px;
+}
+
+div.grid>div.btn-group {
+  display: grid;
+  grid-column: 1 / 3;
+}
+
+div.grid div.right-align {
+  text-align: right;
+}
+
+label {
+  padding-left: 10px;
+}
+
+button,
+input,
+textarea {
+  padding: 10px;
+}
+
+ul.horizontal-list {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul.horizontal-list li {
+  display: inline;
+}
+
+.membermenu {
+  text-align: right;
+}

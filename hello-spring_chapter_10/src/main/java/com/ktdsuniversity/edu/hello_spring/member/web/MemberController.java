@@ -33,7 +33,7 @@ public class MemberController {
 		return"member/memberregist";
 	}
 	
-	@PostMapping("/member/regist")
+	@PostMapping("member/regist")
 	public String postRegistMemberPage(@Valid MemberVO memberVO
 											, BindingResult bindingResult
 											, Model model) {
@@ -71,6 +71,7 @@ public class MemberController {
 	public Map<String, Object> doCheckAvailableEmail(@RequestParam String email){
 		
 		boolean isAvailable = this.memberService.checkAvailableEmail(email);
+		System.out.println(isAvailable);
 		
 		Map<String, Object> response = new HashMap<>();
 		response.put("email", email);

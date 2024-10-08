@@ -25,7 +25,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public boolean checkAvailableEmail(String email) {
-		// TODO Auto-generated method stub
+		
 		return this.memberDao.selectEmailCount(email) == 0;
 	}
 

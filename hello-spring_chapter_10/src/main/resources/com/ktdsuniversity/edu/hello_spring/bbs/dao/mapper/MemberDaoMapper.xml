@@ -24,6 +24,15 @@
 		MEMBERS
 	
 	</select>
+	
+	<select id="selectEmailCount" parameterType="string" resultType="_int">
+	SELECT 
+		COUNT(1) 
+	FROM 
+		MEMBERS 
+	WHERE 
+		EMAIL = #{email}
+	</select>
 
 
 
